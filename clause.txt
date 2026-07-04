@@ -1,0 +1,102 @@
+LEGALGPT TEST DATASET — SAMPLE CONTRACT CLAUSES
+
+SECTION 1 — CONFIDENTIALITY 1.1 The Employee shall maintain strict
+confidentiality regarding all proprietary information, trade secrets,
+source code, customer lists, business strategies, financial records, and
+internal documentation belonging to the Company. 1.2 Confidential
+Information shall not be disclosed to any third party without prior
+written consent from the Company. 1.3 The confidentiality obligations
+under this clause shall survive termination of employment for a period
+of five (5) years.
+
+SECTION 2 — NON-DISCLOSURE 2.1 The Receiving Party agrees not to
+disclose any Confidential Information received from the Disclosing
+Party. 2.2 Disclosure is permitted only to employees, advisors, or
+contractors with a legitimate need to know. 2.3 Any unauthorized
+disclosure shall constitute a material breach of this Agreement.
+
+SECTION 3 — TERMINATION WITHOUT NOTICE 3.1 The Company may terminate the
+employment of an Employee without prior notice in cases involving gross
+misconduct, fraud, theft, or willful negligence. 3.2 Gross misconduct
+includes unauthorized disclosure of confidential data, harassment,
+violence, or severe policy violations. 3.3 Upon termination under this
+clause, the Employee shall immediately return all Company property.
+
+SECTION 4 — TERMINATION WITH NOTICE 4.1 Either Party may terminate this
+Agreement by providing thirty (30) days written notice. 4.2 Salary and
+benefits shall continue during the notice period unless otherwise
+agreed. 4.3 Payment in lieu of notice may be provided at the Company’s
+discretion.
+
+SECTION 5 — PAYMENT TERMS 5.1 The Client agrees to pay all invoices
+within thirty (30) calendar days of receipt. 5.2 Late payments shall
+incur interest at the rate of 1.5% per month. 5.3 All fees are exclusive
+of applicable taxes unless expressly stated.
+
+SECTION 6 — REFUND POLICY 6.1 Refund requests must be submitted within
+seven (7) days of purchase. 6.2 Refunds shall not apply to customized
+services or completed milestones. 6.3 Approved refunds shall be
+processed within ten (10) business days.
+
+SECTION 7 — INTELLECTUAL PROPERTY 7.1 All work product, source code,
+designs, and deliverables created under this Agreement shall remain the
+exclusive property of the Company unless otherwise agreed in writing.
+7.2 The Contractor assigns all rights, title, and interest in such work
+product to the Company.
+
+SECTION 8 — DATA PRIVACY 8.1 Both Parties shall comply with all
+applicable data protection laws. 8.2 Personal data shall only be
+processed for legitimate business purposes. 8.3 Reasonable technical and
+organizational safeguards shall be implemented to protect personal data.
+
+SECTION 9 — FORCE MAJEURE 9.1 Neither Party shall be liable for delay or
+failure caused by events beyond reasonable control. 9.2 Such events
+include natural disasters, war, terrorism, labor strikes, or
+governmental actions.
+
+SECTION 10 — DISPUTE RESOLUTION 10.1 Any dispute arising under this
+Agreement shall first be resolved through good faith negotiation. 10.2
+If unresolved, disputes shall proceed to arbitration. 10.3 The seat of
+arbitration shall be Jaipur, Rajasthan, India.
+
+SECTION 11 — EMPLOYEE MISCONDUCT 11.1 Employee misconduct includes
+insubordination, repeated absenteeism, theft, fraud, workplace
+harassment, and violation of company policies. 11.2 Serious misconduct
+may result in disciplinary action including immediate dismissal.
+
+SECTION 12 — SERVICE LEVEL AGREEMENT 12.1 The Service Provider
+guarantees 99.9% uptime excluding scheduled maintenance. 12.2 Critical
+incidents must receive an initial response within one (1) hour.
+
+SECTION 13 — WARRANTY 13.1 The Vendor warrants that all deliverables
+will conform to agreed specifications. 13.2 Warranty claims must be
+raised within ninety (90) days of delivery.
+
+SECTION 14 — INDEMNIFICATION 14.1 Each Party agrees to indemnify and
+hold harmless the other Party against claims arising from breach,
+negligence, or misconduct. 14.2 Indemnification obligations survive
+termination.
+
+SECTION 15 — GOVERNING LAW 15.1 This Agreement shall be governed by and
+construed in accordance with the laws of India. 15.2 Courts located in
+Rajasthan shall have exclusive jurisdiction.
+
+SECTION 16 — RESIGNATION 16.1 An Employee intending to resign must
+provide at least thirty (30) days prior written notice. 16.2 Failure to
+serve the notice period may result in salary deductions.
+
+SECTION 17 — CONTRACT BREACH 17.1 Failure to perform obligations under
+this Agreement constitutes a breach. 17.2 The non-breaching Party may
+terminate the Agreement upon written notice.
+
+SECTION 18 — SECURITY INCIDENT 18.1 Any cybersecurity breach, data leak,
+or unauthorized access incident must be reported within twenty-four (24)
+hours. 18.2 Immediate remediation steps shall be initiated.
+
+SECTION 19 — FREELANCER ENGAGEMENT 19.1 Freelancers are independent
+contractors and shall not be deemed employees. 19.2 Freelancers are
+responsible for their own taxes and statutory obligations.
+
+SECTION 20 — LIABILITY LIMITATION 20.1 Neither Party shall be liable for
+indirect, incidental, or consequential damages. 20.2 Total liability
+shall not exceed the total fees paid under this Agreement.
