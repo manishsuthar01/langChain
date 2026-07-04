@@ -1,2 +1,14 @@
 node_modules
 .env
+src/clauses.js
+src/.env
+src/embeddings.json
+
+.agentrc
+.claude/    
+.gemini/
+.groq/
+.langchain.cache/
+.langchain.log
+.langchain.memory/
+.prisma/
