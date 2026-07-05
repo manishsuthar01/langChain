@@ -4,22 +4,22 @@ dotenv.config();
 import { ChatGroq } from "@langchain/groq";
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai"
 
-import { SystemMessage } from "@langchain/core/messages";
+import { SystemMessage, ToolMessage } from "@langchain/core/messages";
 import { tool } from "@langchain/core/tools";
 import { z } from "zod";
 import { constractSearch } from "./textToembeddings.js";
 
-export const llm = new ChatGroq({
-    apiKey: process.env.GROQ_API_KEY,
-    model: "llama-3.3-70b-versatile",
-    temperature: 0,
-});
-
-// export const llm = new ChatGoogleGenerativeAI({
-//     apiKey: process.env.GEMINI_API_KEY,
-//     model: "gemini-2.5-flash",
+// export const llm = new ChatGroq({
+//     apiKey: process.env.GROQ_API_KEY,
+//     model: "llama-3.3-70b-versatile",
 //     temperature: 0,
 // });
+
+export const llm = new ChatGoogleGenerativeAI({
+    apiKey: process.env.GEMINI_API_KEY,
+    model: "gemini-2.5-flash",
+    temperature: 0,
+});
 
 const contractSearchTool = tool(
     async ({ query }) => {
@@ -45,63 +45,48 @@ let messages = [
 ];
 
 
-export async function askQuestion(userQestion) {
-
+export async function askQuestion(userQestion, onChunk) {
     messages.push(['human', userQestion])
     while (true) {
-        const response = await toolBoundLLM.invoke(messages)
-        messages.push(response)
+        let calledTools = false;
+        let aiToolCalls;
 
-        if (!response.tool_calls?.length) {
-            return response.content;
+        const response = await toolBoundLLM.stream(messages)
+        let fullResponse = ""
+        for await (const chunk of response) {
+            if (chunk.content) {
+                onChunk(chunk.content);
+                fullResponse += chunk.content
+            }
+
+            if (chunk.tool_calls?.length) {
+                console.log("LLM wants to use tool: ", chunk.tool_calls[0].name);
+                calledTools = true;
+                aiToolCalls = chunk.tool_calls[0]
+            }
+        }
+        messages.push({
+            role: "assistant",
+            content: fullResponse,
+            tool_calls: aiToolCalls ? [aiToolCalls] : []
+        });
+        // console.log(messages)
+
+        if (calledTools === false) {
+            return fullResponse;
         }
 
-        const toolResult = await contractSearchTool.invoke(response.tool_calls[0]);
-        messages.push(toolResult);
+        if (aiToolCalls) {
+            console.log("Tool called by LLM: ", aiToolCalls.args);
+            const toolResult = await contractSearchTool.invoke(aiToolCalls.args);
+            // console.log(toolResult)
+            messages.push(new ToolMessage({
+                tool_call_id: aiToolCalls.id,
+                content: toolResult,
+                name: aiToolCalls.name,
+                role: "tool"
+            }));
+        }
     }
 
 }
-
-
-
-
-
-
-
-
-
-// JSON.stringify({
-//             contract_id: "CON-98721",
-//             parties: {
-//                 employer: "Apex Tech Inc.",
-//                 employee: "Jane Doe"
-//             },
-//             effective_date: "2024-01-15",
-//             tenure_months: 18,
-//             clauses: [
-//                 {
-//                     type: "termination_by_employer",
-//                     standard_notice: "30 days",
-//                     extended_notice_rule: "If employee tenure is greater than 12 months, add 15 days of notice for every additional full year worked.",
-//                     requires_written: true,
-//                     delivery_method: "Certified Mail only",
-//                     severance: {
-//                         base: "2 weeks of salary",
-//                         multiplier: "1 additional week per full year of tenure",
-//                         max_limit: "8 weeks maximum"
-//                     }
-//                 },
-//                 {
-//                     type: "termination_by_employee",
-//                     standard_notice: "14 days",
-//                     requires_written: true,
-//                     delivery_method: "Email or Written Notice"
-//                 },
-//                 {
-//                     type: "immediate_termination_for_cause",
-//                     triggers: ["gross misconduct", "felony conviction", "material breach of contract"],
-//                     severance: "None"
-//                 }
-//             ]
-//         });
-//     },
