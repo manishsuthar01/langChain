@@ -54,9 +54,16 @@ export async function askQuestion(userQestion, onChunk) {
         const response = await toolBoundLLM.stream(messages)
         let fullResponse = ""
         for await (const chunk of response) {
-            if (chunk.content) {
-                onChunk(chunk.content);
-                fullResponse += chunk.content
+            let chunkText = "";
+            if (typeof chunk.content === "string") {
+                chunkText = chunk.content;
+            } else if (Array.isArray(chunk.content)) {
+                // If Gemini wraps the text in an array, extract it
+                chunkText = chunk.content.map(block => block.text || "").join("");
+            }
+            if (chunkText) {
+                onChunk(chunkText);
+                fullResponse += chunkText
             }
 
             if (chunk.tool_calls?.length) {
