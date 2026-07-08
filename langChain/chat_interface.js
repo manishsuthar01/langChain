@@ -1,5 +1,6 @@
 import readline from "readline"
-import { askQuestion } from "./langAgent.js"
+// import { askQuestion } from "./langAgent.js"
+import { askQuestion } from "../langgraph/langGraphAgent.js"
 
 const rl = readline.createInterface({
     input: process.stdin,

@@ -10,7 +10,7 @@ function splitLegalDocument(text) {
 }
 
 
-const text = fs.readFileSync("./clause.txt", 'utf-8');
+const text = fs.readFileSync("../clause.txt", 'utf-8');
 export const docs = splitLegalDocument(text).map((section, index) => ({
     pageContent: section,
     metadata: {

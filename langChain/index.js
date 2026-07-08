@@ -4,8 +4,9 @@ import { ChatGoogleGenAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import dotenv from "dotenv";
-
-dotenv.config();
+dotenv.config({
+    path: "../.env"
+});
 
 // export const llm = new ChatGroq({
 //     apiKey: process.env.GROQ_API_KEY,
